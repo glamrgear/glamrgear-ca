@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Glam'r Gear Canada</title>
+
+  <!-- Redirect to the main Glam'r Gear website after 5 seconds -->
+  <meta http-equiv="refresh" content="5;url=https://glamrgear.com/">
+
+  <!-- Keep this temporary transition page out of search results -->
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://glamrgear.com/">
+
+  <style>
+    :root {
+      --text: #161616;
+      --muted: #676767;
+      --border: #dedede;
+      --button: #111111;
+      --button-hover: #333333;
+      --background: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+      padding: 52px 34px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .brand {
+      font-size: clamp(34px, 7vw, 58px);
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: .06em;
+      margin: 0 0 34px;
+    }
+
+    h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      margin: 0 0 18px;
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0 auto 16px;
+      max-width: 590px;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 15px 28px;
+      background: var(--button);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 7px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .button:hover,
+    .button:focus {
+      background: var(--button-hover);
+    }
+
+    @media (max-width: 520px) {
+      .card {
+        padding: 40px 22px;
+      }
+
+      p {
+        font-size: 17px;
+      }
+    }
+  </style>
+
+  <script>
+    let seconds = 5;
+
+    function updateCountdown() {
+      const el = document.getElementById("countdown");
+
+      if (el) {
+        el.textContent = seconds;
+      }
+
+      if (seconds <= 0) {
+        window.location.replace("https://glamrgear.com/");
+        return;
+      }
+
+      seconds -= 1;
+      setTimeout(updateCountdown, 1000);
+    }
+
+    window.addEventListener("DOMContentLoaded", updateCountdown);
+  </script>
+</head>
+
+<body>
+  <main class="card">
+    <div class="brand">GLAM'R GEAR</div>
+
+    <h1>Welcome, Canadian Customers</h1>
+
+    <p>
+      We're transitioning our Canadian operations, and Glam'r Gear products
+      remain available to customers across Canada.
+    </p>
+
+    <p>
+      Canadian customers can shop Glam'r Gear products available for shipping
+      to Canada, including Changing Stations up to Standard size.
+      Sorry, Large size Changing Stations are not available for Canadian shipping.
+    </p>
+
+    <a class="button" href="https://glamrgear.com/">
+      SHOP GLAM'R GEAR
+    </a>
+
+    <p class="muted">
+      You'll be redirected automatically in <span id="countdown">5</span> seconds.
+    </p>
+  </main>
+</body>
+</html>
